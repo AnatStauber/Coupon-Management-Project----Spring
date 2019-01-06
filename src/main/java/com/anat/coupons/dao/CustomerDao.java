@@ -220,7 +220,7 @@ public class CustomerDao {
 			connection = JdbcUtils.getConnection();
 
 			// creating the query
-			String sql = "SELECT * FROM customers where customerName=? and customerPassword=? ";
+			String sql = "SELECT * FROM customers where BINARY customerName=? and BINARY customerPassword=? ";
 			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, customerName);
 			preparedStatement.setString(2, customerPassword);
